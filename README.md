@@ -1,8 +1,8 @@
 # multim
 
-Where a single key meets multiple values.
+where a lonely key meets multiple values
 
-[![Clojars Project](http://clojars.org/multim/latest-version.svg)]
+[![Clojars Project](http://clojars.org/multim/latest-version.svg)](http://clojars.org/multim)
 
 ## Why
 
@@ -22,14 +22,14 @@ Let's say we have events streaming in in a form of `{timestamp {ticker event-id}
   [1449088870005 {:ticker :FB   :event-id 6}] ])
 ```
 
-* We'd like to keep them in the map.
-* We'd also like to keep them _sorted_ by time (i.e. timestamp)
+* we'd like to keep them in the map.
+* we'd also like to keep them _sorted_ by time (i.e. timestamp)
 
-Notice that Tesla and Google have _the same timestamp_ (i.e. same key value).
+_notice_ that Tesla and Google have _the same timestamp_ (i.e. same key value).
 
 ## Multi Mode
 
-As events come in they can added into something like a [TreeMultimap](http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/TreeMultimap.html)
+As events come in they can be added into something like a [TreeMultimap](http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/TreeMultimap.html)
 which is both: sorted and multimap.
 
 ```clojure
@@ -54,7 +54,7 @@ user=> (def mm (into-multi
   1449088870005=[{:ticker :FB, :event-id 6}]}"]
 ```
 
-notice how it groupped values for the `1449088877203` timestamp.
+_notice_ how it groupped values for the `1449088877203` timestamp.
 
 ### Before and After
 
@@ -75,7 +75,6 @@ user=> (from mm 1449088876592)
 
 {1449088877203 #{{:ticker :GOOG, :event-id 1} {:ticker :TSLA, :event-id 4}}, 
  1449088877601 #{{:ticker :MSFT, :event-id 3}}}
-user=>
 ```
 
 #### View with a View
@@ -116,7 +115,6 @@ user=> (from view 1449088876592)
 
 {1449088877203 #{{:ticker :GOOG, :event-id 1} {:ticker :TSLA, :event-id 4}}, 
  1449088877601 #{{:ticker :MSFT, :event-id 3}}}
-user=>
 ```
 
 ## License
