@@ -58,12 +58,12 @@
 (defn mget [^Multimap mm k]
   (.get mm k))
 
-(defprotocol Slicable 
+(defprotocol Sliceable 
   (from [this k])
   (to [this k]))
 
-(extend-type com.google.common.collect.AbstractMapBasedMultimap$NavigableAsMap
-  Slicable 
+(extend-type com.google.common.collect.TreeMultimap
+  Sliceable 
   (from [this k] 
     (-> this (.asMap)
         (.tailMap k true))) 
@@ -72,7 +72,7 @@
         (.headMap k true))))
 
 (extend-type com.google.common.collect.AbstractMapBasedMultimap$NavigableAsMap
-  Slicable 
+  Sliceable 
   (from [this k] 
     (-> this
         (.tailMap k true))) 

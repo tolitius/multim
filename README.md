@@ -90,10 +90,10 @@ user=> (type view)
 com.google.common.collect.AbstractMapBasedMultimap$NavigableAsMap
 ```
 
-it would of course be boring if this view type was not extended with a `Slicable` protocol (as the `TreeMultimap` above):
+it would of course be boring if this view type was not extended with a `Sliceable` protocol (as the `TreeMultimap` above):
 
 ```clojure
-(defprotocol Slicable 
+(defprotocol Sliceable 
   (from [this k])
   (to [this k]))
 ```
