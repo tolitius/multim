@@ -60,7 +60,7 @@ _notice_ how it groupped values for the `1449088877203` timestamp.
 
 Since the map is sorted, it should be quite simple to find all the entries before or after certain time. 
 
-#####before
+##### before
 ```clojure
 user=> (to mm 1449088876592)
 
@@ -69,7 +69,7 @@ user=> (to mm 1449088876592)
  1449088876590 #{{:ticker :AAPL, :event-id 2}}}
 ```
 
-#####after
+##### after
 ```clojure
 user=> (from mm 1449088876592)
 
@@ -100,7 +100,7 @@ it would of course be boring if this view type was not extended with a `Sliceabl
 
 so it does extend it as well:
 
-#####before
+##### before
 ```clojure
 user=> (to view 1449088876592)
 
@@ -109,7 +109,7 @@ user=> (to view 1449088876592)
  1449088876590 #{{:ticker :AAPL, :event-id 2}}}
 ```
 
-#####after
+##### after
 ```clojure
 user=> (from view 1449088876592)
 
@@ -119,7 +119,7 @@ user=> (from view 1449088876592)
 
 ## License
 
-Copyright © 2015 tolitius
+Copyright © 2017 tolitius
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.

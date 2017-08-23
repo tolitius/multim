@@ -7,13 +7,13 @@
                                       ImmutableMultimap]
            [java.util Map NavigableMap Comparator]))
 
-(def noop (constantly 1))
+(def NOOP (constantly 1))
 
 (defn tree-multimap
   ([] 
    (TreeMultimap/create))
   ([^Comparator comp-key]
-   (TreeMultimap/create comp-key noop))
+   (TreeMultimap/create comp-key NOOP))
   ([^Comparator comp-key ^Comparator comp-value]
    (TreeMultimap/create comp-key comp-value)))
 
