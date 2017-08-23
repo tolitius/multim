@@ -2,7 +2,14 @@
 
 where a lonely key meets multiple values
 
-[![Clojars Project](http://clojars.org/multim/latest-version.svg)](http://clojars.org/multim)
+[![Clojars Project](http://clojars.org/tolitius/multim/latest-version.svg)](http://clojars.org/tolitius/multim)
+
+- [Why](#why)
+- [Time Series](#time-series)
+- [Multi Mode](#multi-mode)
+  - [Time Slicing](#time-slicing)
+  - [View with a View](#view-with-a-view)
+- [License](#license)
 
 ## Why
 
@@ -56,7 +63,7 @@ user=> (def mm (into-multi
 
 _notice_ how it groupped values for the `1449088877203` timestamp.
 
-### Before and After
+### Time Slicing
 
 Since the map is sorted, it should be quite simple to find all the entries before or after certain time. 
 
@@ -77,7 +84,7 @@ user=> (from mm 1449088876592)
  1449088877601 #{{:ticker :MSFT, :event-id 3}}}
 ```
 
-#### View with a View
+### View with a View
 
 While `TreeMultimap` has all the chops, it is mutable, hence it is better to create a navigatable view based on the same `tree-multimap`:
 
