@@ -29,7 +29,7 @@ Let's say we have events streaming in in a form of `{timestamp {ticker event-id}
   [1449088870005 {:ticker :FB   :event-id 6}] ])
 ```
 
-* we'd like to keep them in the map.
+* we'd like to keep them in a map.
 * we'd also like to keep them _sorted_ by time (i.e. timestamp)
 
 _notice_ that Tesla and Google have _the same timestamp_ (i.e. same key value).
@@ -126,7 +126,7 @@ user=> (from view 1449088876592)
 
 ## License
 
-Copyright © 2017 tolitius
+Copyright © 2022 tolitius
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
